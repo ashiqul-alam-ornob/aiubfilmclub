@@ -89,4 +89,14 @@ router.get('/details/:userid', function(req, res){
 	});
 });
 
+router.get('/delete/:userid', function(req, res){
+
+	var user ={userid: req.params.userid}
+
+	userModel.delete(user, function(status){
+		res.redirect('/user/userlist');;		
+	});
+
+});
+
 module.exports = router;

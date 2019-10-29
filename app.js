@@ -8,6 +8,7 @@ var home  		= require('./controllers/home');
 var user  		= require('./controllers/user');
 var login  		= require('./controllers/login');
 var logout  	= require('./controllers/logout');
+//var delete  	= require('./controllers/delete');
 var app 		= express();
 
 //CONGIFURATION
@@ -21,7 +22,7 @@ app.use('/home', home);
 app.use('/user', user);
 app.use('/login', login);
 app.use('/logout', logout);
-
+//app.use('/delete', delete);
 //ROUTING
 app.get('/', function(req, res){
 	res.send('<h2>hello from express</h2>');
