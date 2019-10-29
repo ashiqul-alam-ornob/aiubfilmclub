@@ -40,14 +40,14 @@ module.exports={
 		});
 	},
 	insert : function(user, callback){
-		var sql = "insert into userinfo values(?,'', ?, ?, ?, ?, ?, ?)";
-		db.execute(sql, [user.userid, user.clubid, user.name, user.usertype, user.designation, user.contactnumber, user.email, user.password], function(status){
+		var sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?)";
+		db.execute(sql, [user.userid, user.name, user.usertype, user.designation, user.contactnumber, user.email, user.password], function(status){
 			callback(status);
 		});
 	},
 	update : function(user, callback){
-		var sql = "update userinfo set name=?, contactnumber=?, email=?, password=? where id=?";		
-		db.execute(sql, [user.name, user.contactnumber, user.email, user.password], function(status){
+		var sql = "update userinfo set name=?, contactnumber=?, email=?, password=? where userid=?";		
+		db.execute(sql, [user.name, user.contactnumber, user.email, user.password, user.userid], function(status){
 			callback(status);
 			});
 		
