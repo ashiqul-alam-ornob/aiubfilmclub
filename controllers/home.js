@@ -4,9 +4,9 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 
-		var sql = "select * from user";
+		var sql = "select * from userinfo";
 		db.getResults(sql, function(results){
-			if(req.cookies['username'] != null){
+			if(req.cookies['userid'] != null){
 				res.render('home/index', {user: results});
 			}else{
 				res.redirect('/login');
@@ -14,9 +14,9 @@ router.get('/', function(req, res){
 		});
 });
 
-router.get('/test/:name/:id', function(req, res){
+router.get('/test/:name/:userid', function(req, res){
 
-	res.send(req.params.id+ "|"+req.params.name)
+	res.send(req.params.userid+ "|"+req.params.name)
 })
 
 

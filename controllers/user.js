@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get('*', function(req, res, next){
 
-	if(req.cookies['username'] != null){
+	if(req.cookies['userid'] != null){
 		next();
 	}else{
 		res.redirect('/login');
@@ -14,7 +14,7 @@ router.get('*', function(req, res, next){
 router.get('/userlist', function(req, res){
 
 		userModel.getAll(function(results){
-			if(req.cookies['username'] != null){
+			if(req.cookies['userid'] != null){
 				res.render('user/index', {user: results});
 			}else{
 				res.redirect('/login');
@@ -30,7 +30,13 @@ router.get('/adduser', function(req, res){
 router.post('/adduser', function(req, res){
 
 	var user = {
-		username: req.body.username,
+		userid: req.body.userid,
+		//clubid: req.body.clubid,
+		name: req.body.name,
+		usertype: req.body.usertype,
+		designation: req.body.designation,
+		contactnumber: req.body.contactnumber,
+		email: req.body.email,
 		password: req.body.password
 	};
 
@@ -43,20 +49,26 @@ router.post('/adduser', function(req, res){
 	});
 });
 
-router.get('/edit/:id', function(req, res){
+router.get('/edit/:userid', function(req, res){
 
-	userModel.getById(req.params.id, function(results){
+	userModel.getById(req.params.userid, function(results){
 		res.render('user/edit', {user: results[0]});		
 	});
 
 });
 
-router.post('/edit/:id', function(req, res){
+router.post('/edit/:userid', function(req, res){
 	
 	var user = {
-		username: req.body.username,
+		userid: req.body.userid,
+		//clubid: req.body.clubid,
+		name: req.body.name,
+		usertype: req.body.usertype,
+		designation: req.body.designation,
+		contactnumber: req.body.contactnumber,
+		email: req.body.email,
 		password: req.body.password,
-		id: req.params.id
+		userid: req.params.userid
 	};
 
 	userModel.update(user, function(status){
@@ -69,9 +81,9 @@ router.post('/edit/:id', function(req, res){
 	});
 });
 
-router.get('/details/:id', function(req, res){
+router.get('/details/:userid', function(req, res){
 
-	userModel.getById(req.params.id, function(result){
+	userModel.getById(req.params.userid, function(result){
 		console.log(result);
 		res.render('user/details', {user: result});
 	});
