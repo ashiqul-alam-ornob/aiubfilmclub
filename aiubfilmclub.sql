@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2019 at 11:26 AM
+-- Generation Time: Oct 29, 2019 at 02:39 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -103,7 +103,6 @@ CREATE TABLE `postinfo` (
 
 CREATE TABLE `userinfo` (
   `userid` varchar(20) NOT NULL,
-  `clubid` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `usertype` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
@@ -111,6 +110,13 @@ CREATE TABLE `userinfo` (
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userinfo`
+--
+
+INSERT INTO `userinfo` (`userid`, `name`, `usertype`, `designation`, `contactnumber`, `email`, `password`) VALUES
+('16-30976-1', 'Ornob', 'Admin', 'Student', '01988158021', 'glab.ornob96@gmail.com', '1234');
 
 --
 -- Indexes for dumped tables
@@ -147,12 +153,6 @@ ALTER TABLE `postinfo`
   ADD PRIMARY KEY (`postid`);
 
 --
--- Indexes for table `userinfo`
---
-ALTER TABLE `userinfo`
-  ADD PRIMARY KEY (`clubid`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -185,12 +185,6 @@ ALTER TABLE `noticeinfo`
 --
 ALTER TABLE `postinfo`
   MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `userinfo`
---
-ALTER TABLE `userinfo`
-  MODIFY `clubid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
