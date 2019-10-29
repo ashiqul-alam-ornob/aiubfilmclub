@@ -25,7 +25,7 @@ app.use('/logout', logout);
 //app.use('/delete', delete);
 //ROUTING
 app.get('/', function(req, res){
-	res.send('<h2>hello from express</h2>');
+	res.redirect('/login');
 });
 
 
