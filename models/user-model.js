@@ -51,6 +51,8 @@ module.exports={
 			}
 		});
 	},
+
+	
 	getAllalumni : function(callback){
 		var sql = "select * from userinfo where designation='Alumni'";
 

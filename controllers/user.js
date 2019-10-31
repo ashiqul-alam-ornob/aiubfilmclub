@@ -33,6 +33,17 @@ router.get('/executivelist', function(req, res){
 	});
 });
 
+router.get('/alumnilist', function(req, res){
+
+	userModel.getAllalumni(function(results){
+		if(req.cookies['userid'] != null){
+			res.render('user/index', {user: results});
+		}else{
+			res.redirect('/login');
+		}
+	});
+});
+
 router.get('/adduser', function(req, res){
 	res.render('user/adduser');
 });
