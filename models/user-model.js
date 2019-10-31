@@ -39,6 +39,32 @@ module.exports={
 			}
 		});
 	},
+	getAllexecutive : function(callback){
+		var sql = "select * from userinfo where designation='Executive'";
+
+		db.getResults(sql, [], function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+	getAllalumni : function(callback){
+		var sql = "select * from userinfo where designation='Alumni'";
+
+		db.getResults(sql, [], function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+
+
 	insert : function(user, callback){
 		var sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?)";
 		db.execute(sql, [user.userid, user.name, user.usertype, user.designation, user.contactnumber, user.email, user.password], function(status){

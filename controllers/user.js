@@ -22,6 +22,16 @@ router.get('/userlist', function(req, res){
 		});
 });
 
+router.get('/executivelist', function(req, res){
+
+	userModel.getAllexecutive(function(results){
+		if(req.cookies['userid'] != null){
+			res.render('user/executivelist', {user: results});
+		}else{
+			res.redirect('/login');
+		}
+	});
+});
 
 router.get('/adduser', function(req, res){
 	res.render('user/adduser');
