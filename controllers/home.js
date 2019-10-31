@@ -14,10 +14,7 @@ router.get('/', function(req, res){
 		});
 });
 
-router.get('/test/:name/:userid', function(req, res){
 
-	res.send(req.params.userid+ "|"+req.params.name)
-})
 
 
 
