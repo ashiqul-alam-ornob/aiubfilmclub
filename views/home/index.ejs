@@ -2,9 +2,35 @@
 <html>
 <head>
 	<title>login page</title>
+	<style>
+		
+		.maindiv{
+			/*margin-top: px;*/
+			width: 90%;
+			height: 400px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			background-image: url(abstract-blue-curved-triangles-low-poly-motion-background-video-animation-ultra-hd-4k-3840x2160_hw37gwhd__S0011.jpg);
+			background-size: 100% 100%;
+			box-shadow: 1px 2px 10px black;
+			animation: slider 20s infinite linear;
+		}
+
+		@keyframes slider{
+			0%{background-image: url(abstract-blue-curved-triangles-low-poly-motion-background-video-animation-ultra-hd-4k-3840x2160_hw37gwhd__S0011.jpg);}
+
+			25%{background-image: url(741407.jpg)}
+
+			50%{background-image: url(iphone-wallpaper-abstract-design-11.jpg)}
+
+			75%{background-image: url(Simple-Blue-Abstract-Wallpaper.jpg)}
+		}
+
+	</style>
 </head>
 <body>
-	<h1>Welcome home!</h1>
 
 	<% include ../header/menu_osa.ejs %>
 
@@ -12,6 +38,50 @@
 	<!-- <a href="/user/adduser">Add User</a> |
 	<a href="/user/userlist">View User List</a> |
 	<a href="/logout">logout</a> -->
+
+	<div class="maindiv">
+	</div>
+
+	<div style="overflow: hidden;margin-top: 450px;margin-right: 20px;margin-left: 20px;height: 800px;width: 70%;float: left">
+
+		<div style="overflow: hidden;float: left;background:orange;padding: 4px;width: 100%;height: 200px">
+
+				<h1>About Us</h1>
+				<p></p>
+		</div>
+
+		<div style="overflow: hidden;float: left;background:cyan;padding: 4px;width: 100%;height: 400px">
+
+			<h1>Development Team</h1>
+
+		</div>
+
+		<div style="overflow: hidden;float: left;background:gray;padding: 4px;width: 100%;height: 400px">
+
+			<h1>contact Us</h1>
+
+		</div>
+
+	</div>
+	<div style="overflow:hidden;margin-top: 450px;margin-right: 20px;height: 600px;width: 25%;float: right;">
+
+		<div style="overflow: hidden;float: left;background:gray;padding: 4px;width: 100%; height: 50%">
+
+			<h1>Notice</h1>
+
+		</div>
+		<div style="overflow: hidden;float: left;background:yellow;padding: 4px;width: 100%; height: 50%">
+
+			<h1><a href="#" style="text-decoration: none; color: black">Galley</a></h1>
+			<table border="0">
+				<tr>
+					<td>kuf <img src=""></td>
+				</tr>
+			</table>
+
+		</div>
+
+	</div>
 
 </body>
 </html>
