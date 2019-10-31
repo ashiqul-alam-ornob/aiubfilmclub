@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <link rel="stylesheet"href="style.css"> -->
+	<style>
+		
+		*{
+	padding: 0;
+	margin: 0;
+}
+body{
+
+}
+.menu{
+	background:rgb(0,100,0);
+	text-align: center;
+}
+
+.menu ul{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+
+.menu ul li{
+	width: 120px;
+	margin: 15px;
+	padding: 15px;
+}
+.menu ul li:hover{
+	background:rgb(30,60,0);
+	border-radius:4px;
+}
+
+
+.menu ul li a{
+	color: white;
+	text-decoration: none;
+}
+.menu .fa{
+	margin-right: 4px;
+}
+
+.sub-menu1{
+	display: none;
+}
+.menu ul li:hover .sub-menu1{
+	display: block;
+	position: absolute;
+	background:rgb(0,100,0);
+	margin-top: 15px;
+	margin-left: -15px;
+
+}
+
+.sub-menu2{
+	display: none;
+}
+
+.menu ul li:hover .sub-menu2{
+	display: block;
+	position: absolute;
+	background:rgb(0,100,0);
+	margin-top: 15px;
+	margin-left: -15px;
+
+}
+
+	</style>
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="menu">
+	<ul>
+		<li class="active"><i class="fa fa-home"></i><a href="#">Home</a></li>
+
+
+		<li><i class="fa fa-plus-square"></i><a href="#">Create..</a>
+			<div class="sub-menu1">
+				<ul>
+					<li>Notice</li>
+					<li>Post</li>
+					<li>Event</li>
+				</ul>
+
+			</div>
+
+		</li>
+
+
+		<li><i class="fa fa-list"></i><a href="#">Member List</a>
+			<div class="sub-menu2">
+				<ul>
+					<li>Executive</li>
+					<li><a href="/user/userlist">General Member</a></li>
+					<li>Alumni</li>
+				</ul>
+
+			</div>
+		</li>
+
+
+		<li><i class="fa fa-user-plus"></i><a href="/user/adduser">Add Member</a></li>
+		<li><i class="fa fa-edit"></i><a href="#">Edit Profile</a></li>
+		<li><a href="/logout">Log Out</a></li>
+	</ul>
+	</div>
+</body>
+</html>
