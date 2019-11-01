@@ -5,6 +5,7 @@ var bodyParse  	= require('body-parser');
 var exSession  	= require('express-session');
 var cookieParser= require('cookie-parser');
 var home  		= require('./controllers/home');
+var post  		= require('./controllers/post');
 var user  		= require('./controllers/user');
 var login  		= require('./controllers/login');
 var logout  	= require('./controllers/logout');
@@ -20,6 +21,7 @@ app.use(exSession({secret:"my top secret value", saveUninitialized:true, resave:
 app.use(cookieParser());
 app.use('/home', home);
 app.use('/user', user);
+app.use('/post', post);
 app.use('/login', login);
 app.use('/logout', logout);
 //app.use('/delete', delete);
