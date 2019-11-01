@@ -4,6 +4,19 @@
 	<title>Create Post</title>
 </head>
 <body>
+
+	<% if (user == null) { %>
+	<% include ../header/menu_unr.ejs %>
+	<% } else if(user.designation == 'OSA') { %>
+	<%- include('../header/menu_osa.ejs',{user: user}) %>
+	<% } else if(user.designation == 'Executive'){ %>
+	<%- include('../header/menu_executive.ejs',{user: user}) %>
+	<% } else if(user.designation == 'Alumni'){ %>
+	<%- include('../header/menu_alumni.ejs',{user: user}) %>
+	<% } else { %>
+	<%- include('../header/menu_GM.ejs',{user: user}) %>
+	<% } %>
+
 	<div>
 		<div style="height: 100px"></div>
 		<div style="height: 500px" align="center">
@@ -20,7 +33,7 @@
 						<tr>
 							<td>Image/Video</td>
 							<td>:</td>
-							<td><input type="file" accept="file_extension|audio/*|video/*|image/*|media_type" name="filepath" id="filepath"></td>
+							<td><input type="file" accept="file_extension|audio/*|video/*|image/*|media_type" name="filepath" id="filepath" multiple="multiple"></td>
 						</tr>
 						<tr>
 							<td></td>
