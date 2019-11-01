@@ -32,7 +32,17 @@
 </head>
 <body>
 
+	<% if (user == null) { %>
+	<% include ../header/menu_unr.ejs %>
+	<% } else if(user.designation == 'OSA') { %>
 	<% include ../header/menu_osa.ejs %>
+	<% } else if(user.designation == 'Executive'){ %>
+	<% include ../header/menu_executive.ejs %>
+	<% } else if(user.designation == 'Alumni'){ %>
+	<% include ../header/menu_alumni.ejs %>
+	<% } else { %>
+	<% include ../header/menu_GM.ejs %>
+	<% } %>
 
 
 	<!-- <a href="/user/adduser">Add User</a> |

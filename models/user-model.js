@@ -21,9 +21,9 @@ module.exports={
 		db.getResults(sql, [user.userid, user.password], function(result){
 
 			if(result.length > 0 ) {
-				callback(true);
+				callback(result);
 			}else{
-				callback(false);
+				callback([]);
 			}
 		});
 	},
