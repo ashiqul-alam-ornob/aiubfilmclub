@@ -4,10 +4,10 @@ var router = express.Router();
 
 router.get('*', function(req, res, next){
 
-	if(req.cookies['userid'] != null){
+	if(req.cookies['userid'] != null || req.session.userid != null){
 		next();
 	}else{
-		res.redirect('/login');
+		res.redirect('/home');
 	}
 });
 
@@ -98,6 +98,33 @@ router.post('/edit/:userid', function(req, res){
 			res.redirect('/user/userlist');
 		}else{
 			res.redirect('/user/adduser');
+		}
+	});
+});
+
+router.get('/editprofile/:userid', function(req, res){
+
+	userModel.getById(req.params.userid, function(results){
+		res.render('user/editprofile', {user: results});		
+	});
+});
+
+router.post('/editprofile/:userid', function(req, res){
+	
+	var user = {
+		name: req.body.name,
+		contactnumber: req.body.contactnumber,
+		email: req.body.email,
+		password: req.body.password,
+		userid: req.params.userid
+	};
+
+	userModel.update(user, function(status){
+
+		if(status){
+			res.redirect('/home');
+		}else{
+			res.redirect('/user/editprofile/'+req.params.userid);
 		}
 	});
 });
