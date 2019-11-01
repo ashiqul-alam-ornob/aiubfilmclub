@@ -71,23 +71,25 @@ body{
 	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
 	<div class="menu">
 	<ul>
-
 		<li class="active"><i class="fa fa-home"></i><a href="/home">Home</a></li>
-
 		<li><i class="fa fa-plus-square"></i><a href="#">Create..</a>
 			<div class="sub-menu1">
 				<ul>
 					<li>Post</li>
 				</ul>
-
 			</div>
-
 		</li>
-
-
-		<li><i class="fa fa-edit"></i><a href="user/editprofile/<%= user.userid %>">Edit Profile</a></li>
+		<li><i></i><a href="#">Profile</a>
+			<div class="sub-menu1">
+				<ul>
+					<li><a href="user/profile/<%= user.userid %>">Details</a></li>
+					<li><i></i><a href="user/editprofile/<%= user.userid %>">Edit</a></li>
+				</ul>
+			</div>
+		</li>
 		<li><a href="/logout">Log Out</a></li>
 	</ul>
 	</div>

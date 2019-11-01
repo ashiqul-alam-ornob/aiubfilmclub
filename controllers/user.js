@@ -137,6 +137,13 @@ router.get('/details/:userid', function(req, res){
 	});
 });
 
+router.get('/profile/:userid', function(req, res){
+
+	userModel.getById(req.params.userid, function(result){
+		res.render('user/profile', {user: result});
+	});
+});
+
 router.get('/delete/:userid', function(req, res){
 
 	var user ={userid: req.params.userid}
