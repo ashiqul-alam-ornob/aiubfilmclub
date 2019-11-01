@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2019 at 04:47 AM
+-- Generation Time: Nov 01, 2019 at 05:17 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -25,44 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `postinfo`
+-- Table structure for table `userinfo`
 --
 
-CREATE TABLE `postinfo` (
-  `postid` int(11) NOT NULL,
-  `creatorid` varchar(20) NOT NULL,
-  `postdescription` varchar(300) NOT NULL,
-  `postdate` varchar(20) NOT NULL,
-  `postaprovalstatus` int(11) DEFAULT NULL,
-  `filepath` varchar(300) DEFAULT NULL
+CREATE TABLE `userinfo` (
+  `userid` varchar(20) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `usertype` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `contactnumber` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `postinfo`
+-- Dumping data for table `userinfo`
 --
 
-INSERT INTO `postinfo` (`postid`, `creatorid`, `postdescription`, `postdate`, `postaprovalstatus`, `filepath`) VALUES
-(1, '16-30976-1', 'testing', '1-11-19', 1, '0');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `postinfo`
---
-ALTER TABLE `postinfo`
-  ADD PRIMARY KEY (`postid`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `postinfo`
---
-ALTER TABLE `postinfo`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+INSERT INTO `userinfo` (`userid`, `name`, `usertype`, `designation`, `contactnumber`, `email`, `password`) VALUES
+('16-30976-1', 'Ashiqul Alam Ornob', 'Admin', 'OSA', '01988158021', 'glab.ornob96@gmail.com', '1234'),
+('16-31975-1', 'Badhon Rahman', 'Admin', 'Executive', '019881', 'glab.ornob96@gmail.com', '1234'),
+('16-32475-1', 'Arman Malik', 'Admin', 'General Secretary', '01988132432', 'glab.ornob96@gmail.com', '1234'),
+('16-33455-1', 'Zeesan Ahmed', 'Admin', 'President', '019832432', 'glab.ornob96@gmail.com', '1234'),
+('16-78755-1', 'Polok Ahmed', 'User', 'General Member', '01677432', 'glab.ornob96@gmail.com', '1234');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
