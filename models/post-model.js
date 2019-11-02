@@ -39,6 +39,20 @@ module.exports={
 			}
 		});
 	},
+	getAllApproved : function(callback){
+		var sql = "select * from postinfo";
+
+		db.getResults(sql, [], function(results){
+
+			console.log(results);
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
 	insert : function(post, callback){
 		var sql = "insert into postinfo values('', ?, ?, ?, ?, ?)";
 		db.execute(sql, [post.userid, post.postdescription, post.postdate, post.postapprovalstatus, post.filepath], function(status){

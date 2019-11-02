@@ -11,6 +11,15 @@ router.get('*', function(req, res, next){
 	}
 });
 
+router.get('/', function(req, res){
+		var user = {
+			designation : req.session.designation
+		}
+		postModel.getAllApproved(function(results){
+			res.render('post/index', {post: results, user:user});
+		});
+});
+
 router.get('/createpost', function(req, res){
 	var user = {
 		designation: req.session.designation
