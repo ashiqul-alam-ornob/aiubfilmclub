@@ -23,6 +23,20 @@ router.get('/', function(req, res){
 	});
 });
 
+router.get('/noticerequest', function(req, res){
+
+		var notice = {
+			noticestatus : 0
+		};
+
+		noticeModel.getAllRequest(notice, function(results){
+			var user = {
+				designation : req.session.designation
+			};
+				res.render('notice/noticerequest', {notice: results, user: user});
+		});
+});
+
 router.get('/createnotice', function(req, res){
 	var user = {
 		designation: req.session.designation

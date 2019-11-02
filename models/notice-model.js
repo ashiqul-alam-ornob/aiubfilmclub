@@ -53,6 +53,18 @@ module.exports={
 			}
 		});
 	},
+	getAllRequest : function(notice, callback){
+		var sql = "select * from noticeinfo where noticestatus =?";
+
+		db.getResults(sql, [notice.noticestatus], function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
 	insert : function(notice, callback){
 		var sql = "insert into noticeinfo values('', ?, ?, ?, ?, ?, ?)";
 		db.execute(sql, [notice.creatorid, notice.title, notice.description, notice.noticedate, notice.expiredate, notice.noticestatus], function(status){
