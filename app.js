@@ -6,7 +6,7 @@ var exSession  	= require('express-session');
 var cookieParser= require('cookie-parser');
 var home  		= require('./controllers/home');
 var post  		= require('./controllers/post');
-var notice  		= require('./controllers/notice');
+var notice  	= require('./controllers/notice');
 var event  		= require('./controllers/event');
 var user  		= require('./controllers/user');
 var login  		= require('./controllers/login');
@@ -28,6 +28,7 @@ app.use('/notice', notice);
 app.use('/event', event);
 app.use('/login', login);
 app.use('/logout', logout);
+app.use(express.static('public'))
 //app.use('/delete', delete);
 //ROUTING
 app.get('/', function(req, res){
