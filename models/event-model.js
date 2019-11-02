@@ -40,14 +40,14 @@ module.exports={
 		});
 	},
 	insert : function(event, callback){
-		var sql = "insert into eventinfo values('', ?, ?, ?, ?, ?, ?)";
+		var sql = "insert into eventinfo values('', ?, ?, ?, ?, ?)";
 		db.execute(sql, [event.eventname, event.eventdate, event.expiredate, event.eventdescription, event.eventstatus], function(status){
 			callback(status);
 		});
 	},
 	postStatusUpdate: function(event, callback){
 		var sql = "update eventinfo set eventstatus=? where eventid=?";		
-		db.execute(sql, [event.eventstatus, event.noticeid], function(status){
+		db.execute(sql, [event.eventstatus, event.eventid], function(status){
 			callback(status);
 			});
 	},
