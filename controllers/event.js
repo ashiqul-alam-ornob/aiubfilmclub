@@ -11,12 +11,26 @@ router.get('*', function(req, res, next){
 	}
 });
 
+router.get('/', function(req, res){
+		var user = {
+			designation : req.session.designation
+		};
+		var event = {
+			eventstatus : 1
+		}
+		eventModel.getAllApproved(event, function(results){
+			res.render('event/index', {event: results, user:user});
+		});
+});
+
 router.get('/createevent', function(req, res){
 	var user = {
 		designation: req.session.designation
 	};
 	res.render('event/createevent', {user: user});
 });
+
+
 
 router.post('/createevent', function(req, res){
 	// var fp; 

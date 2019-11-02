@@ -39,6 +39,20 @@ module.exports={
 			}
 		});
 	},
+	getAllApproved : function(event, callback){
+		var sql = "select * from eventinfo where eventstatus = ?";
+
+		db.getResults(sql, [event.eventstatus], function(results){
+
+			console.log(results);
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
 	insert : function(event, callback){
 		var sql = "insert into eventinfo values('', ?, ?, ?, ?, ?)";
 		db.execute(sql, [event.eventname, event.eventdate, event.expiredate, event.eventdescription, event.eventstatus], function(status){
