@@ -32,7 +32,7 @@
     if(!userid.match(idformat)||userid=="")
 	{
 		
-        alert("userid can not be empty");
+        alert("userid format does not match; maintain xx-xxxxx-1/2/3 format");
         // document.getElementById('errorid').value="User Id an not be empty";
         return false ;
         
@@ -41,7 +41,7 @@
 	if(name.length<3||name=="")
 	{
 		
-        alert("Problem With Username");
+        alert("Username can not be empty and must have 3 characters");
         return false ;
         
 	}
@@ -66,7 +66,7 @@
 	else if(!contactnumber.match(noformat)||contactnumber=="")
 	{
 		
-        alert("contactnumber can not be blank");
+        alert("contactnumber must have 11 numbers");
         return false ;
         
 	}
