@@ -10,6 +10,15 @@
 	<a href="/logout">logout</a>
 
 <br><br>
+	<% if (suser == null) { %>
+	<% include ../header/menu_unr.ejs %>
+	<% } else if(suser.designation == 'OSA') { %>
+	<%- include('../header/menu_osa.ejs',{user: user}) %>
+	<% } else if(suser.designation == 'Executive'){ %>
+	<%- include('../header/menu_executive.ejs',{user: user}) %>
+	<% } else if(suser.designation == 'Alumni'){ %>
+	<%- include('../header/menu_alumni.ejs',{user: user}) %>
+	<% } %>
 	<table border="1">
 		<tr>
 			<td>User ID</td>

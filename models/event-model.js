@@ -56,6 +56,7 @@ module.exports={
 	insert : function(event, callback){
 		var sql = "insert into eventinfo values('', ?, ?, ?, ?, ?)";
 		db.execute(sql, [event.eventname, event.eventdate, event.expiredate, event.eventdescription, event.eventstatus], function(status){
+			console.log(status);
 			callback(status);
 		});
 	},

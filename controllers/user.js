@@ -14,33 +14,28 @@ router.get('*', function(req, res, next){
 router.get('/userlist', function(req, res){
 
 		userModel.getAll(function(results){
-			if(req.cookies['userid'] != null){
-				res.render('user/index', {user: results});
-			}else{
-				res.redirect('/login');
-			}
+			var suser = {
+				designation : req.session.designation
+			};
+				res.render('user/index', {user: results, suser: suser});
 		});
 });
 
 router.get('/executivelist', function(req, res){
 
 	userModel.getAllexecutive(function(results){
-		if(req.cookies['userid'] != null){
 			res.render('user/executivelist', {user: results});
-		}else{
-			res.redirect('/login');
-		}
+		
 	});
 });
 
 router.get('/alumnilist', function(req, res){
 
 	userModel.getAllalumni(function(results){
-		if(req.cookies['userid'] != null){
-			res.render('user/index', {user: results});
-		}else{
-			res.redirect('/login');
-		}
+			var suser = {
+				designation : req.session.designation
+			};
+			res.render('user/index', {user: results, suser: suser});
 	});
 });
 
