@@ -29,7 +29,12 @@ router.post('/', function(req, res){
 			req.session.userid = result[0].userid;
 			req.session.usertype = result[0].usertype;
 			req.session.designation = result[0].designation;
-			console.log(req.session.userid);
+
+			if(req.body.logcheck == "checked")
+			{
+				res.cookie('userid', req.session.userid);
+			}
+			
 			res.redirect('/home');
 		}else{
 			res.send('invalid username/password');
