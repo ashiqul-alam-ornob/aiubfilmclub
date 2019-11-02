@@ -28,7 +28,6 @@ app.use('/notice', notice);
 app.use('/event', event);
 app.use('/login', login);
 app.use('/logout', logout);
-app.use(express.static('public'))
 //app.use('/delete', delete);
 //ROUTING
 app.get('/', function(req, res){
