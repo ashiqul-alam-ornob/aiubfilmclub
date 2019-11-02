@@ -33,20 +33,10 @@ router.get('/createevent', function(req, res){
 
 
 router.post('/createevent', function(req, res){
-	// var fp; 
-	// if(req.body.filepath == "" || req.body.filepath == undefined || req.body.filepath == null)
-	// {
-	// 	fp = null;
-	// }
-	// else{
-	// 	fp = req.body.filepath;
-	// }
-
 	var event = {
-		//eventid: req.body.eventid,
 		eventname: req.body.eventname,
 		eventdate: new Date().toISOString().slice(0,10),
-		expiredate: req.body.expiredate,
+		expiredate: new Date(req.body.expiredate).toISOString(),
 		eventdescription: req.body.eventdescription,
 		eventstatus: null
 	};
