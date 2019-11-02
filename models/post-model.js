@@ -39,10 +39,10 @@ module.exports={
 			}
 		});
 	},
-	getAllApproved : function(callback){
-		var sql = "select * from postinfo";
+	getAllApproved : function(post, callback){
+		var sql = "select * from postinfo where postaprovalstatus = ?";
 
-		db.getResults(sql, [], function(results){
+		db.getResults(sql, [post.postaprovalstatus], function(results){
 
 			console.log(results);
 
