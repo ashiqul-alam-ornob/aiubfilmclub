@@ -2,6 +2,18 @@
 <html>
 <head>
 	<title>Home</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
 	<style>
 		
 		.maindiv{
@@ -54,7 +66,7 @@
 
 	<div style="overflow: hidden;margin-top: 450px;margin-right: 20px;margin-left: 20px;height: 800px;width: 70%;float: left">
 
-		<div style="overflow: hidden;float: left;background:#581845;color:white;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; padding: 2px; width: 100%;height: auto">
+		<div style="overflow: hidden;float: left;background:#581845;color:black;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; padding: 2px; width: 100%;height: auto">
 
 				<h1>About Us</h1>
 				AIUB Film Club (AFC) started their journey from 2009
@@ -94,11 +106,34 @@
 		</div>
 
 	</div>
-	<div style="overflow:hidden;margin-top: 450px;margin-right: 20px;height: 600px;width: 25%;float: right;">
+	<div style="overflow:hidden;margin-top: 450px;margin-right: 20px;height: auto; max-height: 800px;width: 25%;float: right;">
 
 		<div style="overflow: hidden;float: left;background:gray;padding: 4px;width: 100%; height: 50%">
 
-			<h1>Notice</h1>
+			<a href="/notice" style="text-decoration: none;"><h1>Notice</h1></a>
+			<div id="accordion">
+
+  <h3>Notice Title</h3>
+  <div>
+    <p>
+    Notice description are written in here
+    </p>
+  </div>
+
+  <h3>Notice Title 2</h3>
+  <div>
+    <p>
+    Notice description are written in here
+    </p>
+  </div>
+
+  <h3>Notice Title 3</h3>
+  <div>
+    <p>
+    Notice description are written in here
+    </p>
+  </div>
+</div>
 
 		</div>
 		<div style="overflow: hidden;float: left;background:yellow;padding: 4px;width: 100%; height: 50%">

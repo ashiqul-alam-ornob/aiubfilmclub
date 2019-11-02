@@ -19,6 +19,7 @@ router.get('/', function(req, res){
 	}
 	noticeModel.getAllApproved(notice, function(results){
 		res.render('notice/index', {notice: results, user:user});
+		//res.render('home/index', {notice: results, user:user});
 	});
 });
 
