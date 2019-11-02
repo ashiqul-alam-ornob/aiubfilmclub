@@ -45,6 +45,7 @@ module.exports={
 			callback(status);
 		});
 	},
+
 	postStatusUpdate: function(notice, callback){
 		var sql = "update noticeinfo set noticestatus=? where noticeid=?";		
 		db.execute(sql, [notice.noticestatus, notice.noticeid], function(status){

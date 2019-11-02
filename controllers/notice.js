@@ -22,9 +22,12 @@ router.post('/createnotice', function(req, res){
 
 	// var d= typeof req.body.expiredate;
 	// console.log(d);
+	console.log(req.session.userid);
+	console.log(req.body.title);
+	console.log(req.body.description);
+	console.log(req.body.expiredate);
 	var notice = {
-
-		creatorid: req.session.creatorid,
+		creatorid: req.session.userid,
 		title: req.body.title,
         description: req.body.description,
         noticedate: new Date().toISOString().slice(0,10),
@@ -35,10 +38,9 @@ router.post('/createnotice', function(req, res){
 	noticeModel.insert(notice, function(status){
 		if(status){
 			res.redirect('/home');
-			//console.log(res);
 		}else{
-			//console.log(res);
 			res.redirect('/notice/createnotice');
+			
 		}
 	});
 });
