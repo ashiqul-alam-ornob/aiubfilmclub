@@ -85,6 +85,21 @@ module.exports={
 			callback(status);
 			});
 	},
+
+	ChangeStatusAp : function(notice, callback){
+		var sql = "update noticeinfo set noticestatus=? where noticeid=?";
+		db.execute(sql, [notice.noticestatus, notice.noticeid],  function(status){
+			callback(status);
+		});
+	},
+
+	ChangeStatusRej : function(notice, callback){
+		var sql = "update noticeinfo set noticestatus=? where noticeid=?";
+		db.execute(sql, [notice.noticestatus, notice.noticeid],  function(status){
+			callback(status);
+		});
+	},
+
 	delete : function(notice, callback){
 		var sql = "delete from noticeinfo where noticeid=?";
 		db.execute(sql, [notice.noticeid],  function(status){

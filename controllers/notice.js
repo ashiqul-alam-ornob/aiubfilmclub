@@ -71,4 +71,29 @@ router.post('/createnotice', function(req, res){
 	});
 });
 
+router.get('/approve/:noticeid', function(req, res){
+
+	var notice ={
+		noticeid: req.params.noticeid,
+		noticestatus: 1
+	}
+
+	noticeModel.ChangeStatusAp(notice, function(status){
+		res.redirect('/notice/noticerequest');;		
+	});
+
+});
+
+router.get('/reject/:noticeid', function(req, res){
+
+	var notice ={
+		noticeid: req.params.noticeid,
+		noticestatus: -1
+	}
+
+	noticeModel.ChangeStatusRej(notice, function(status){
+		res.redirect('/notice/noticerequest');;		
+	});
+});
+
 module.exports = router;
