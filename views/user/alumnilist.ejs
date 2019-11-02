@@ -6,9 +6,19 @@
 <body>
 	<h1>Alumni List</h1>
 
-	<a href="/home">Back</a> |
-	<a href="/logout">logout</a>
-
+	<!-- <a href="/home">Back</a> |
+	<a href="/logout">logout</a> -->
+		<% if (user == null) { %>
+		<% include ../header/menu_unr.ejs %>
+		<% } else if(user.designation == 'OSA') { %>
+		<%- include('../header/menu_osa.ejs',{user: user}) %>
+		<% } else if(user.designation == 'Executive'){ %>
+		<%- include('../header/menu_executive.ejs',{user: user}) %>
+		<% } else if(user.designation == 'Alumni'){ %>
+		<%- include('../header/menu_alumni.ejs',{user: user}) %>
+		<% } else { %>
+		<%- include('../header/menu_GM.ejs',{user: user}) %>
+		<% } %>
 <br><br>
 	<table border="1">
 		<tr>

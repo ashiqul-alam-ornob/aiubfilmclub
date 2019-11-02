@@ -40,7 +40,10 @@ router.get('/alumnilist', function(req, res){
 });
 
 router.get('/adduser', function(req, res){
-	res.render('user/adduser');
+	var user = {
+		designation: req.session.designation
+	}
+	res.render('user/adduser', {user: user});
 });
 
 router.post('/adduser', function(req, res){
@@ -68,7 +71,7 @@ router.post('/adduser', function(req, res){
 router.get('/edit/:userid', function(req, res){
 
 	userModel.getById(req.params.userid, function(results){
-		res.render('user/edit', {user: results[0]});		
+		res.render('user/edit', {user: results});		
 	});
 
 });
