@@ -10,6 +10,17 @@ router.get('*', function(req, res, next){
 		res.redirect('/home');
 	}
 });
+router.get('/', function(req, res){
+	var user = {
+		designation : req.session.designation
+	};
+	var notice = {
+		noticestatus : 1
+	}
+	noticeModel.getAllApproved(notice, function(results){
+		res.render('notice/index', {notice: results, user:user});
+	});
+});
 
 router.get('/createnotice', function(req, res){
 	var user = {

@@ -27,6 +27,20 @@ module.exports={
 	// 		}
 	// 	});
 	// },
+	getAllApproved : function(notice, callback){
+		var sql = "select * from noticeinfo where noticestatus = ?";
+
+		db.getResults(sql, [notice.noticestatus], function(results){
+
+			console.log(results);
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
 	getAll : function(callback){
 		var sql = "select * from noticeinfo";
 
