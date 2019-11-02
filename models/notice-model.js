@@ -41,7 +41,7 @@ module.exports={
 	},
 	insert : function(notice, callback){
 		var sql = "insert into noticeinfo values('', ?, ?, ?, ?, ?, ?)";
-		db.execute(sql, [notice.userid, notice.title, notice.description, notice.noticedate, notice.expiredate, notice.noticestatus], function(status){
+		db.execute(sql, [notice.creatorid, notice.title, notice.description, notice.noticedate, notice.expiredate, notice.noticestatus], function(status){
 			callback(status);
 		});
 	},

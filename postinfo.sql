@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2019 at 05:17 AM
+-- Generation Time: Nov 02, 2019 at 06:10 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -25,29 +25,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userinfo`
+-- Table structure for table `noticeinfo`
 --
 
-CREATE TABLE `userinfo` (
-  `userid` varchar(20) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `usertype` varchar(50) NOT NULL,
-  `designation` varchar(50) NOT NULL,
-  `contactnumber` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL
+CREATE TABLE `noticeinfo` (
+  `noticeid` int(11) NOT NULL,
+  `creatorid` varchar(20) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `noticedate` varchar(20) NOT NULL,
+  `expiredate` varchar(20) NOT NULL,
+  `noticestatus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `userinfo`
+-- Dumping data for table `noticeinfo`
 --
 
-INSERT INTO `userinfo` (`userid`, `name`, `usertype`, `designation`, `contactnumber`, `email`, `password`) VALUES
-('16-30976-1', 'Ashiqul Alam Ornob', 'Admin', 'OSA', '01988158021', 'glab.ornob96@gmail.com', '1234'),
-('16-31975-1', 'Badhon Rahman', 'Admin', 'Executive', '019881', 'glab.ornob96@gmail.com', '1234'),
-('16-32475-1', 'Arman Malik', 'Admin', 'General Secretary', '01988132432', 'glab.ornob96@gmail.com', '1234'),
-('16-33455-1', 'Zeesan Ahmed', 'Admin', 'President', '019832432', 'glab.ornob96@gmail.com', '1234'),
-('16-78755-1', 'Polok Ahmed', 'User', 'General Member', '01677432', 'glab.ornob96@gmail.com', '1234');
+INSERT INTO `noticeinfo` (`noticeid`, `creatorid`, `title`, `description`, `noticedate`, `expiredate`, `noticestatus`) VALUES
+(1, '16-30976-1', 'vsdfcs', 'sdfsdfv', '31/11/19', '31/11/19', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `noticeinfo`
+--
+ALTER TABLE `noticeinfo`
+  ADD PRIMARY KEY (`noticeid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `noticeinfo`
+--
+ALTER TABLE `noticeinfo`
+  MODIFY `noticeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
