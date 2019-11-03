@@ -44,7 +44,7 @@ router.post('/createpost', function(req, res){
 		userid: req.session.userid,
 		postdescription: req.body.postdescription,
 		postdate: new Date().toISOString().slice(0,10),
-		postapprovalstatus: null,
+		postapprovalstatus: 0,
 		filepath: fp
 	};
 
