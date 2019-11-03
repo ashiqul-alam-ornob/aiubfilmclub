@@ -90,6 +90,8 @@ router.post('/edit/:userid', function(req, res){
 		userid: req.params.userid
 	};
 
+	
+
 	userModel.update(user, function(status){
 
 		if(status){
